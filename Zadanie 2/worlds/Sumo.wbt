@@ -1,0 +1,245 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "db"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.3699494414211677 0.04995999809437849 -0.9277076098548377 3.03779202724477
+  position 2.6822931532327168 0.10225438775629396 2.180617955826403
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation 0.573089 0.0936514 0.0537377
+  rotation -0.011092735748000692 -0.008392047598966241 -0.9999032576958242 1.560570701003081
+  size 0.1 0.1 0.1
+  mass 1
+}
+Floor {
+  size 3 3
+  tileSize 0.25 0.25
+}
+DEF Red_Arena Solid {
+  translation 0 0 0.01
+  children [
+    DEF arena Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+      }
+    }
+  ]
+  boundingObject USE arena
+}
+DEF Black_Arena Solid {
+  rotation 0 0 1 4.692820414042842e-06
+  children [
+    DEF cArena Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 1.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE cArena
+}
+Robot {
+  translation 0.239132 0.0432472 0.0447556
+  rotation 0.0011847580362644367 -0.026499136599543578 0.9996481341491487 0.14504340033313173
+  children [
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 181.28564763313574
+        axis 0 1 0
+        anchor 0.05 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04999601447021127 0.06000000009977072 -2.9702542561029177e-07
+        rotation 0.8165817575473125 -0.40832558203699093 0.4080005542828279 1.7712717246948566
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0.333333 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF Physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 105.1301683667382
+        axis 0 1 0
+        anchor 0.05 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.04998760951251124 -0.05999991723334277 -4.6534402913004736e-07
+        rotation 0.5336616003272233 -0.5982370392598076 0.5977606052541825 2.1605049070416387
+        children [
+          USE Wheel
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 182.10933067829737
+        axis 0 1 0
+        anchor -0.05 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0500035705145139 0.06000011177327655 1.1250756346225334e-05
+        rotation 0.9973492993695623 -0.0514713033701004 0.051430341010208075 1.5726546336118508
+        children [
+          USE Wheel
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 105.27806705158505
+        axis 0 1 0
+        anchor -0.05 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05000387976631878 -0.05999999990128034 9.925545149371704e-07
+        rotation 0.5905572631559997 -0.5708593170698144 0.570404907980533 2.074000415890839
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE Physics_wh
+      }
+    }
+    DistanceSensor {
+      translation 0.1 0.02 0
+      rotation 0 0 1 0.3
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation 0.1 -0.02 0
+      rotation 0 0 1 -0.27
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    DistanceSensor {
+      translation 0.085 0 -0.023
+      rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
+      children [
+        DEF colorSensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "colorSensor"
+      boundingObject USE colorSensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "four_wheeled_collision_avoidance"
+}
