@@ -16,60 +16,82 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.3699494414211677 0.04995999809437849 -0.9277076098548377 3.03779202724477
-  position 2.6822931532327168 0.10225438775629396 2.180617955826403
+  orientation 0.509163967146666 0.1524531791874812 -0.8470596689225018 2.5638701376727457
+  position 1.8495466708307595 1.8915752787686568 4.588146299365094
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 WoodenBox {
-  translation 0.573089 0.0936514 0.0537377
-  rotation -0.011092735748000692 -0.008392047598966241 -0.9999032576958242 1.560570701003081
+  translation -0.284401 0.428787 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.187115 0.466296 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.429651 -0.015128 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.760341 -0.567252 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(3)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.664412 -0.333346 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(4)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.075355 -0.443688 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(5)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.380386 -0.52386 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(6)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation -0.0896525 0.722812 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(7)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+WoodenBox {
+  translation 0.638163 0.580618 0.0496074
+  rotation -9.514084088835292e-07 -3.0566587232861127e-07 -0.9999999999995007 1.436014554826855
+  name "wooden box(8)"
   size 0.1 0.1 0.1
   mass 1
 }
 Floor {
-  size 3 3
+  size 2 2
   tileSize 0.25 0.25
 }
-DEF Red_Arena Solid {
-  translation 0 0 0.01
-  children [
-    DEF arena Shape {
-      appearance PBRAppearance {
-        baseColor 1 0 0
-        roughness 1
-        metalness 0
-      }
-      geometry Cylinder {
-        height 0.01
-      }
-    }
-  ]
-  boundingObject USE arena
-}
-DEF Black_Arena Solid {
-  rotation 0 0 1 4.692820414042842e-06
-  children [
-    DEF cArena Shape {
-      appearance PBRAppearance {
-        baseColor 0 0 0
-        roughness 1
-        metalness 0
-      }
-      geometry Cylinder {
-        height 0.01
-        radius 1.1
-      }
-    }
-  ]
-  name "solid(1)"
-  boundingObject USE cArena
-}
 Robot {
-  translation 0.239132 0.0432472 0.0447556
-  rotation 0.0011847580362644367 -0.026499136599543578 0.9996481341491487 0.14504340033313173
+  translation 0.32156620071550435 0.05738579593544365 0.03972175943815029
+  rotation 3.0076069575108222e-05 -0.00010430935944207724 0.9999999941074936 1.8878685642625517
   children [
     DEF Body Shape {
       appearance PBRAppearance {
@@ -82,7 +104,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 181.28564763313574
+        position 226.56577167661953
         axis 0 1 0
         anchor 0.05 0.06 0
       }
@@ -92,8 +114,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04999601447021127 0.06000000009977072 -2.9702542561029177e-07
-        rotation 0.8165817575473125 -0.40832558203699093 0.4080005542828279 1.7712717246948566
+        translation 0.04999863950467152 0.06000000009977072 3.757888271545305e-06
+        rotation -0.9664990215175695 -0.18156555843827826 0.1814210279834636 4.679116452363829
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -113,7 +135,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 105.1301683667382
+        position 159.81718787489226
         axis 0 1 0
         anchor 0.05 -0.06 0
       }
@@ -123,8 +145,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.04998760951251124 -0.05999991723334277 -4.6534402913004736e-07
-        rotation 0.5336616003272233 -0.5982370392598076 0.5977606052541825 2.1605049070416387
+        translation 0.05000399900077527 -0.05999991723334277 -1.1736639982321887e-05
+        rotation 0.14327328662691918 0.7000903997549373 -0.699532842338437 2.8567591722453756
         children [
           USE Wheel
         ]
@@ -135,7 +157,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 182.10933067829737
+        position 227.38943670263964
         axis 0 1 0
         anchor -0.05 0.06 0
       }
@@ -145,8 +167,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.0500035705145139 0.06000011177327655 1.1250756346225334e-05
-        rotation 0.9973492993695623 -0.0514713033701004 0.051430341010208075 1.5726546336118508
+        translation -0.04999012850648013 0.06000011177327655 6.471607832933289e-06
+        rotation -0.7204957784915744 -0.4905448846596092 0.490154617758632 4.391046718110267
         children [
           USE Wheel
         ]
@@ -157,7 +179,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 105.27806705158505
+        position 159.96510179385822
         axis 0 1 0
         anchor -0.05 -0.06 0
       }
@@ -167,8 +189,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.05000387976631878 -0.05999999990128034 9.925545149371704e-07
-        rotation 0.5905572631559997 -0.5708593170698144 0.570404907980533 2.074000415890839
+        translation -0.04999983833342035 -0.05999999990128034 -4.0014516204269e-06
+        rotation 0.09064072258297683 0.7044764163459719 -0.703915647092727 2.9606619900348066
         children [
           USE Wheel
         ]
