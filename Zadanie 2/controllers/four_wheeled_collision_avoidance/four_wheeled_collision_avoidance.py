@@ -15,8 +15,8 @@ for i in range(4):
     wheels[i].setVelocity(0.0)
 avoidObstacleCounter = 0
 while robot.step(TIME_STEP) != -1:
-    leftSpeed = 2.0
-    rightSpeed = 2.0
+    leftSpeed = 10.0
+    rightSpeed = 10.0
     leftds = ds[0].getValue()
     rightds = ds[1].getValue()
     colSens = ds[2].getValue()
@@ -27,11 +27,11 @@ while robot.step(TIME_STEP) != -1:
             leftSpeed = -2
             rightSpeed = 2
         elif rightds >= 1000 and  leftds <= 900:
-            leftSpeed = 2
-            rightSpeed = -2
+            leftSpeed = 10
+            rightSpeed = -10
         else:
-            leftSpeed = 2.0
-            rightSpeed = 2.0
+            leftSpeed = 10.0
+            rightSpeed = 10.0
     elif detected == 0:
         if avoidObstacleCounter > 0:
             avoidObstacleCounter -= 1
