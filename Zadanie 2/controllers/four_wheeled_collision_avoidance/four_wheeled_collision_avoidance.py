@@ -23,10 +23,10 @@ while robot.step(TIME_STEP) != -1:
     if detected == 1:
         print("left ds = " + str(leftds))
         print("right ds = " + str(rightds))
-        if leftds >= 1000 and rightds >= 500:
+        if leftds >= 1000 and rightds <= 900 :
             leftSpeed = -2
             rightSpeed = 2
-        elif rightds >= 1000 and leftds >= 500:
+        elif rightds >= 1000 and  leftds <= 900:
             leftSpeed = 2
             rightSpeed = -2
         else:
@@ -39,7 +39,7 @@ while robot.step(TIME_STEP) != -1:
             rightSpeed = 1.0     
         else:  # read sensors
             for i in range(2):   
-                    if ds[i].getValue() < 550.0 :
+                    if ds[i].getValue() <950.0 :
                         detected = 1                   
     if colSens > 900.0:
           avoidObstacleCounter = 100 
