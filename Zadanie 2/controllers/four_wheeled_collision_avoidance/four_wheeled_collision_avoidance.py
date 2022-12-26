@@ -1,6 +1,6 @@
 from controller import Robot
 detected = 0
-TIME_STEP = 64
+TIME_STEP = 32
 robot = Robot()
 ds = []
 dsNames = ['ds_right', 'ds_left','colorSensor']
@@ -35,8 +35,8 @@ while robot.step(TIME_STEP) != -1:
     elif detected == 0:
         if avoidObstacleCounter > 0:
             avoidObstacleCounter -= 1
-            leftSpeed = -1.0
-            rightSpeed = 1.0     
+            leftSpeed = -2.0
+            rightSpeed = 2.0     
         else:  # read sensors
             for i in range(2):   
                     if ds[i].getValue() <950.0 :
