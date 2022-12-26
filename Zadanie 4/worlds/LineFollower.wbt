@@ -15,8 +15,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.509163967146666 0.1524531791874812 -0.8470596689225018 2.5638701376727457
-  position 2.1619472126909476 2.1682278329827427 5.345481795461348
+  orientation 0.36169761045985993 -0.31039754394196606 -0.8791064800707719 4.420782949341059
+  position 0.23301416217418308 -1.0623053064502936 1.5007353268383716
 }
 TexturedBackground {
 }
@@ -26,22 +26,27 @@ Floor {
   size 5 5
   tileSize 0.25 0.25
 }
-Solid {
+DEF Tor Solid {
+  translation 1.19 0.18 0
+  scale 0.02 0.02 0.02
   children [
-    Shape {
-      appearance DEF Tor PBRAppearance {
+    DEF Tor Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
       }
       geometry Mesh {
         url [
-          "../Daring Gogo-Elzing/Daring Gogo-Elzing.stl"
+          "../Tor3.stl"
         ]
       }
     }
   ]
+  boundingObject USE Tor
 }
 Robot {
-  translation 0.2856531658708959 0.1647776311057121 0.039721067568226215
-  rotation 0.0001238571487970653 3.1239083416229033e-06 0.9999999923248241 1.8878711334791802
+  translation -0.2646813979464372 -0.22063138305711477 0.03971890811496274
+  rotation 0.00012419245420892302 -3.426796143044746e-05 0.9999999917009705 1.6598126196292309
   children [
     DEF Body Shape {
       appearance PBRAppearance {
@@ -49,12 +54,12 @@ Robot {
         metalness 0
       }
       geometry Box {
-        size 0.2 0.1 0.05
+        size 0.2 0.1 0.025
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 229.44577174498636
+        position 416.38599138974894
         axis 0 1 0
         anchor 0.05 0.06 0
       }
@@ -64,8 +69,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.0500022860727387 0.06000000009977072 -3.2781920678372463e-06
-        rotation 0.038711200348702936 -0.7068580387014974 0.706295374535778 3.0641473023200243
+        translation 0.05000331313433896 0.06000000009977072 2.2351314619391534e-06
+        rotation -0.5291379126933847 -0.6002442982487907 0.5997664977058196 4.1156218023816535
         children [
           DEF Wheel Shape {
             appearance PBRAppearance {
@@ -85,7 +90,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 162.6971877936873
+        position 358.7919049524109
         axis 0 1 0
         anchor 0.05 -0.06 0
       }
@@ -95,8 +100,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.049993101724944734 -0.05999991723334277 1.0303131880017418e-05
-        rotation -0.8983268747843552 0.3107753167110742 -0.3105278225269114 4.606164763390524
+        translation 0.05000823153932792 -0.05999991723334277 9.272674132510857e-06
+        rotation 0.9025853151867111 0.30453851870557375 -0.3042959734106257 1.6723168323369373
         children [
           USE Wheel
         ]
@@ -107,7 +112,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 230.2694364850907
+        position 417.71562801731034
         axis 0 1 0
         anchor -0.05 0.06 0
       }
@@ -117,8 +122,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.050007861973598265 0.06000011177327655 -8.804400229222758e-06
-        rotation 0.33539238122249115 -0.6664151625939949 0.6658849612979155 2.493907510099302
+        translation -0.04999628183218748 0.06000011177327655 -1.1202826445794121e-05
+        rotation -0.04107616399532491 -0.7067910998563054 0.7062287801522558 3.223764143238017
         children [
           USE Wheel
         ]
@@ -129,7 +134,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 162.8451017575794
+        position 358.9398178773908
         axis 0 1 0
         anchor -0.05 -0.06 0
       }
@@ -139,8 +144,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.05000119101952594 -0.05999999990128034 3.823509335996201e-06
-        rotation -0.9364424748603148 0.2481667781461951 -0.24796923499100793 4.647563571984403
+        translation -0.04999660018857203 -0.05999999990128034 2.116372700613526e-06
+        rotation 0.8587391403682891 0.36247494911013883 -0.36218641618251546 1.7217139126013121
         children [
           USE Wheel
         ]
@@ -188,7 +193,7 @@ Robot {
       }
     }
     DistanceSensor {
-      translation 0.085 0 -0.023
+      translation 0.085 4.59558e-15 -0.023
       rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
       children [
         DEF colorSensor Shape {
@@ -201,7 +206,87 @@ Robot {
           }
         }
       ]
-      name "colorSensor"
+      name "cs_3"
+      boundingObject USE colorSensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.085164 0.0199993 -0.023
+      rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
+      children [
+        DEF colorSensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "cs_4"
+      boundingObject USE colorSensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.085328 0.0399987 -0.023
+      rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
+      children [
+        DEF colorSensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "cs_5"
+      boundingObject USE colorSensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.084836 -0.0199993 -0.023
+      rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
+      children [
+        DEF colorSensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "cs_2"
+      boundingObject USE colorSensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.084672 -0.0399987 -0.023
+      rotation -0.004100340762836766 -0.9999831860391573 0.004100590762883277 -1.5708153071795863
+      children [
+        DEF colorSensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "cs_1"
       boundingObject USE colorSensor
       physics Physics {
       }
