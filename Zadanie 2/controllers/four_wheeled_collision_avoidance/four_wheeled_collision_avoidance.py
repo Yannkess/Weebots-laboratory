@@ -36,13 +36,15 @@ while robot.step(TIME_STEP) != -1:
         if avoidObstacleCounter > 0:
             avoidObstacleCounter -= 1
             leftSpeed = -2.0
-            rightSpeed = 2.0     
+            rightSpeed = 2.0  
+            if leftds < 550 or rightds < 550:
+                 avoidObstacleCounter = 0  
         else:  # read sensors
             for i in range(2):   
                     if ds[i].getValue() <950.0 :
                         detected = 1                   
     if colSens > 900.0:
-          avoidObstacleCounter = 100 
+          avoidObstacleCounter = 70 
           detected = 0
     print("Detected = " + str(detected))
     wheels[0].setVelocity(leftSpeed)
