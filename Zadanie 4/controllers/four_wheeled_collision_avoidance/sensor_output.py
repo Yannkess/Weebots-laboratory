@@ -12,19 +12,19 @@ class SensorReading:
     
         output = 3000
 
-        if self.sensor3 > 730:
+        if self.sensor3 > 500:
            #output += self.sensor3*3
            output = 3000
-        elif self.sensor2 > 730 and self.sensor3 < 730 :
+        elif self.sensor2 > 500 and self.sensor3 < 500 :
             #output += self.sensor2*2
             output = 2000
-        elif self.sensor1 > 730 and self.sensor3 < 730 and self.sensor2 < 730:
+        elif self.sensor1 > 500 and self.sensor3 < 500 and self.sensor2 < 500:
             #output += self.sensor1
             output = 1000
-        elif self.sensor4 > 730 and self.sensor3 < 730:
+        elif self.sensor4 > 500 and self.sensor3 < 500:
             #output += self.sensor4*4
             output = 4000
-        elif self.sensor5 > 730 and self.sensor3 < 730 and self.sensor4 < 730:
+        elif self.sensor5 > 500 and self.sensor3 < 500 and self.sensor4 < 500:
            #output += self.sensor5*5
            output = 5000
     

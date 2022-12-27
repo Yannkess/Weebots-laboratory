@@ -1,11 +1,11 @@
 from controller import Robot
 from pid_controller import PIDController
 from sensor_output import SensorReading
-speed = 2
+speed = 4
 detected = 0
 TIME_STEP = 64
 robot = Robot()
-pid_controller = PIDController(kp=0.005, ki=0, kd= 0.0001, setpoint=3000, min_output=-2*speed, max_output=2*speed)
+pid_controller = PIDController(kp=0.01, ki=0, kd= 0.00001, setpoint=3000, min_output=-2*speed, max_output=2*speed)
 sensorReader = SensorReading(0,0,0,0,0)
 ds = []
 dsNames = ['ds_right', 'ds_left','cs_1','cs_2','cs_3','cs_4','cs_5']
