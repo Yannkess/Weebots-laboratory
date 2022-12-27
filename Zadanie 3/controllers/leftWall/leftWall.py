@@ -3,6 +3,7 @@ import numpy as np
 
 
 MAZE_SIZE = 5000
+GRID_SIZE = 1
 current_x = 2500
 current_y = 2500
 visited_grid = np.zeros((MAZE_SIZE, MAZE_SIZE))
