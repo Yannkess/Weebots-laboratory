@@ -1,16 +1,50 @@
 #VRML_SIM R2022b utf8
+
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5773 0.5773 0.5773 2.0944
-  position 0 0 10
+  orientation -0.6328142177623067 0.02117952824040873 0.7740139490870909 3.096470451209835
+  position 0.6125076612575955 -0.203636176337471 2.592581360908712
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
-RectangleArena {
+Floor {
+  size 4 4
+}
+E-puck {
+  hidden position_0_0 3.095607430257573e-08
+  hidden position_0_1 3.0956080466358654e-08
+  hidden translation_1 0 0.026 0.02
+  hidden rotation_1 0 1 0 2.9802322387695313e-08
+  hidden translation_2 0 -0.025999999999999985 0.02
+  hidden rotation_2 0 1 0 2.9802322387695313e-08
+  translation -0.06616015136478685 0.05999999999996169 -6.121674037035292e-05
+  rotation 4.525462354784687e-08 -0.9999999999999989 -1.3236498039253936e-08 0.019399299133011732
+  controller "labirynt"
+}
+Solid {
+  translation -0.44 0.66 -0.11
+  scale 0.03 0.03 0.03
+  children [
+    DEF Labirynt Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [
+          "../labirynt.stl"
+        ]
+      }
+    }
+  ]
+  boundingObject USE Labirynt
 }
