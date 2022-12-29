@@ -8,8 +8,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6366748393851901 0.021292036781966752 0.7708383735022004 3.0966828094778327
-  position 0.5915229927357313 -0.20233710975572503 2.5929878608117076
+  orientation -0.6279861948885067 -0.041043011408446656 0.7771414351609242 3.1370651031713965
+  position 1.2578113412643037 -0.44427208713171334 5.061709624387737
 }
 TexturedBackground {
 }
@@ -19,13 +19,16 @@ Floor {
   size 4 4
 }
 E-puck {
-  hidden position_0_0 17.27840212311937
-  hidden position_0_1 12.86560215527812
-  hidden rotation_1 0 1 0 4.712031508760198
-  hidden rotation_2 0 1 0 0.2992315409189475
-  translation 0.0461685 -0.238161 -0.000227299
-  rotation 0.0007426678392195878 0.00074085850192683 -0.999999449786429 1.5732252488984666
+  translation 0.450086 -0.0477055 -0.000143768
+  rotation -1.1787799923394731e-07 -0.00011400599925911025 0.9999999935013091 3.13954
   controller "labirynt"
+  groundSensorsSlot [
+    DistanceSensor {
+      rotation 0 -1 0 -1.5708053071795867
+      name "ir0"
+      type "infra-red"
+    }
+  ]
 }
 Solid {
   translation -0.44 0.66 -0.11
@@ -45,4 +48,40 @@ Solid {
     }
   ]
   boundingObject USE Labirynt
+}
+DEF Meta Solid {
+  translation -0.87 -1.14 -0.09999
+  scale 2 2 2
+  children [
+    DEF Meta Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE Meta
+}
+DEF Meta Solid {
+  translation 0.13 0.73 -0.09999
+  scale 2 2 2
+  children [
+    DEF Meta Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE Meta
 }
